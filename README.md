@@ -1,29 +1,26 @@
-# front-atelier
+# Modules intéressant à importer
 
-This template should help get you started developing with Vue 3 in Vite.
+## Identité
+Ali & Steve
+https://github.com/LEZEAUsteve/identite-atelier4/
 
-## Recommended IDE Setup
+## Catalogue
+Nous aurions besoin pour intégrer le front mais cependant, soit les documentations ne sont pas assez explicite pour 
+implémenter le module, soit les Api sont faites en PHP 🥴.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Cycle de vie
+Arnaud
+https://github.com/Arnaudboy/lyfeCycle
 
-## Customize configuration
+##  Commandes
+Antonin et Matis
+https://github.com/antonin187/commandes-glissade-B3-DEV2
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Messagerie
+Clement et Luc
+https://github.com/clemtmpl/Atelier4-backend
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Note vendeur
+Thomas et Hugo
+https://github.com/Thomas-Lebas/NoteVendeur
+(Même si l'autre est vraiment très clean)

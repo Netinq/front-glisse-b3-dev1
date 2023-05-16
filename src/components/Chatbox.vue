@@ -72,6 +72,12 @@ export default {
   overflow: hidden;
   z-index: 10000;
   background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+.chatbox.active {
+  width: 25vw;
+  transform: translateX(0);
 }
 
 .chatbox-header {
