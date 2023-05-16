@@ -1,17 +1,22 @@
 <template>
-  <div class="chatbox-button">
-    <img src="/src/assets/img/comment-solid.svg" alt="chatbox" />
-  </div>
-  <div class="chatbox">
-    <div class="chatbox-header">
-      <h3>Messagerie</h3>
+  <div>
+    <div class="chatbox-button" @click="toggleChatbox">
+      <img src="/src/assets/img/comment-solid.svg" alt="chatbox" />
     </div>
-    <div class="users">
-      <div class="user" v-for="item in data" :key="item.id">
-        <img :src="item.image" :alt="item.name" />
-        <div class="content">
-          <p class="name">{{ item.name }}</p>
-          <p class="message">{{ item.message }}</p>
+    <div class="chatbox" :class="{ active: isChatboxOpen }">
+      <div class="chatbox-header">
+        <h3>Messagerie</h3>
+        <button class="close-button" @click="toggleChatbox">
+          <i class="icon-close">❌</i> 
+        </button>
+      </div>
+      <div class="users">
+        <div class="user" v-for="item in data" :key="item.id">
+          <img :src="item.image" :alt="item.name" />
+          <div class="content">
+            <p class="name">{{ item.name }}</p>
+            <p class="message">{{ item.message }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -19,16 +24,21 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import MessagerieService from "@/servives/MessagerieService";
 
 const data = MessagerieService.getAuthors(true);
+const isChatboxOpen = ref(false);
+
+function toggleChatbox() {
+  isChatboxOpen.value = !isChatboxOpen.value;
+}
 </script>
 
 <script>
 export default {
   name: "chatbox"
 }
-
 </script>
 
 <style scoped>
@@ -72,6 +82,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .chatbox-header h3 {
   margin: 0;}
@@ -105,5 +116,23 @@ export default {
   font-size: 0.8rem;
   margin: 0;
   font-family: 'Poppins', sans-serif;
+}
+.close-button {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.close-button:hover {
+  color: #ff0000;
+}
+
+i.icon-close {
+  font-style: normal;
 }
 </style>
