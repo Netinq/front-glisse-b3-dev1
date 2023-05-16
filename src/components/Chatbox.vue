@@ -25,24 +25,19 @@
 
 <script setup>
 import { ref } from 'vue';
+import MessagerieService from "@/servives/MessagerieService";
 
-const data = [
-  {
-    name: 'Quentin Sar',
-    message: 'Salut, tu fais quoi ?',
-    image: 'https://fakeimg.pl/300/',
-  },
-  {
-    name: 'Jathursan Mehavarnan',
-    message: 'Rien de fou et toi ?',
-    image: 'https://fakeimg.pl/300/',
-  },
-];
-
+const data = MessagerieService.getAuthors(true);
 const isChatboxOpen = ref(false);
 
 function toggleChatbox() {
   isChatboxOpen.value = !isChatboxOpen.value;
+}
+</script>
+
+<script>
+export default {
+  name: "chatbox"
 }
 </script>
 
