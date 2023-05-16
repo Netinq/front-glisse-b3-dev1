@@ -19,31 +19,15 @@
 </template>
 
 <script setup>
-const data = [
-  {
-    'name': 'Jean Henri',
-    'message': 'Salut, tu fais quoi ?',
-    'image': "https://fakeimg.pl/300/"
-  },
-  {
-    'name': 'Jean Paul',
-    'message': 'Salut, tu fais quoi ?',
-    'image': "https://fakeimg.pl/300/"
-  }
-]
+import MessagerieService from "@/servives/MessagerieService";
+
+const data = MessagerieService.getAuthors(true);
 </script>
 
 <script>
 export default {
   name: "chatbox"
 }
-
-const chatbox = document.querySelector('.chatbox');
-const chatboxButton = document.querySelector('.chatbox-button');
-
-chatboxButton.addEventListener('click', () => {
-  chatbox.classList.toggle('active');
-})
 
 </script>
 
